@@ -5,16 +5,16 @@
     transition: 0.25s ease-in-out;
   }
 
-  .logo-image:hover{
-    opacity: 0.6;
-  }
-  
   .navbar-container {
     width: 100%;
     display: flex;
     justify-content:space-between;
     align-items: center;
     
+  }
+
+  .navbar-container span{
+    font-weight: 500;
   }
 
   #linkBox{
@@ -58,6 +58,19 @@
   .hover-underline-animation:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+  }
+
+  #donateBtn
+  {
+    background-color: rgb(131, 0, 0);
+    padding: 0.5rem 1.5rem;
+    color: #fff;
+  }
+
+  #donateBtn:hover
+  {
+    background-color: #fff;
+    color:  rgb(131, 0, 0);
   }
 
   a{

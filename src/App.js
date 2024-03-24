@@ -1,16 +1,14 @@
-// Import necessary React modules
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/navbar/navbar";
 import Homepage from "./pages/homepage/homepage";
 import Visit from "./pages/visit/visit";
-import MuseumGallery from "./pages/exhibitions/exhibitions";
+import Publications from "./pages/publications/publications";
 import About from "./pages/about/about";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import React from 'react';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { useLocation } from "react-router-dom";
-
-
+import DonatePopUp from "./components/donate/donate";
 
 function RoutesWithTransition() {
   let location = useLocation();
@@ -20,11 +18,11 @@ function RoutesWithTransition() {
         <Routes location={location}>
           <Route exact path="/" element={<Homepage />} />
           <Route path="/Visit" element={<Visit />} />
-          <Route path="/MuseumGallery" element={<MuseumGallery />} />
+          <Route path="/Publications" element={<Publications />} />
           <Route path="/About" element={<About />} />
           {/* <Route path="/Authors" element={<Authors />} /> */}
           {/* <Route path="/Bibliography" element={<Bibliography />} /> */}
-  {/* <Route path="/About" element={<About />} /> */}
+          {/* <Route path="/About" element={<About />} /> */}
         </Routes>
       </CSSTransition>
     </TransitionGroup>
@@ -32,12 +30,24 @@ function RoutesWithTransition() {
 }
 
 function App() {
+  const [showDonatePopUp, setShowDonatePopUp] = useState(false);
+
+  useEffect(() => {
+    // Show donate pop-up after 5 seconds
+    const timer = setTimeout(() => {
+      setShowDonatePopUp(true);
+    }, 2000);
+
+    // Clean up function to clear the timer if component unmounts before the timeout
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-   /* #ebe4df */
     <div style={{ backgroundColor: "#fff" }}>
       <BrowserRouter>
         <Navbar />
         <RoutesWithTransition />
+        {showDonatePopUp && <DonatePopUp />}
       </BrowserRouter>
     </div>
   );

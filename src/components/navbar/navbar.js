@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import logo from "../../images/white horiz.png";
+import logo from "../../images/TCBL_color_blocks.png";
 import "./navbar.css";
 import { Link } from "react-router-dom";
 
@@ -15,12 +15,12 @@ function NavigationBar() {
       variant="dark"
       className="Navigation"
       /*#785e4b*/
-      style={{ backgroundColor: "#ddd" , position: "sticky", top: "0"}}  
+      style={{ backgroundColor: "#C0C0C0" , position: "sticky", top: "0"}}  
     >
       <Container className="navbar-container">
     
           <Navbar.Brand as={Link} to="/" className="logo">
-            <img style={{filter: "invert(100%)"}} src={logo} alt="logo" className="logo-image" />
+            <img src={logo} alt="logo" className="logo-image" />
           </Navbar.Brand>
      
       
@@ -32,11 +32,12 @@ function NavigationBar() {
               </span>
             </Nav.Link>
           
-            <Nav.Link as={Link} to="/MuseumGallery" className="nav-link">
+            <Nav.Link as={Link} to="/Publications" className="nav-link">
               <span className="hover-underline-animation">
-                EXHIBITIONS
+                PUBLICATIONS
               </span>
             </Nav.Link>
+            
             {/*
             <Nav.Link as={Link} to="/Learn" className="nav-link">
               <span className="hover-underline-animation">
@@ -57,6 +58,11 @@ function NavigationBar() {
             <Nav.Link as={Link} to="/About" className="nav-link">
               <span className="hover-underline-animation">
                 ABOUT
+              </span>
+            </Nav.Link>
+            <Nav.Link as={Link} to="/Donate" id="donateBtn">
+              <span>
+                DONATE
               </span>
             </Nav.Link>
           </Nav>

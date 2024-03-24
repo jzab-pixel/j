@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Search } from 'bootstrap-icons-react';
 import { FaPencilAlt } from 'react-icons/fa';
-import "./exhibitions.css"; // Import the CSS file
+import "./publications.css"; // Import the CSS file
 import defPic from '../../images/def.jpg'
 const defDesc = "Lorem think ipsum dolor sit amet, consectetur adipiscing elit. Sed think commodo mauris, sit amet fermentum lorem dapibus at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer think ultricies ipsum in turpis pretium, id think volutpat quam venenatis. Nulla facilisi. Duis think vehicula, think tortor sit amet finibus tristique, nisi tellus eleifend mauris, ac ullamcorper sapien leo sed ex.";
 const exhibitionsData = [
@@ -35,7 +35,7 @@ const ExhibitionGallery = ({ exhibitions }) => (
   </div>
 );
 
-const MuseumGallery = () => {
+const Publications = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredExhibitions, setFilteredExhibitions] = useState(exhibitionsData);
 
@@ -90,4 +90,4 @@ const MuseumGallery = () => {
   );
 };
 
-export default MuseumGallery;
+export default Publications;

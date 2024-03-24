@@ -1,0 +1,70 @@
+#donateWindow
+{
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #ffffffa4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#donateBox
+{
+    position: relative;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    background-color: rgb(223, 223, 223);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    animation: fade-in 1s ease; /* Apply the fade-in animation */
+}
+
+#donateBox img, #donateBox p{
+    position: relative;
+    width: 50%;
+}
+
+@keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+#popUpDonateBtn
+{
+    background-color: rgb(131, 0, 0);
+    padding: 0.5rem 1.5rem;
+    color: #fff;
+    border: none;
+    transition: .3s ease;
+
+
+}
+
+#closePopUp {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    padding: 0.3rem 0.5rem;
+    background-color: rgb(131, 0, 0);
+    color: #fff;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+  #closePopUp:hover, #popUpDonateBtn:hover
+  {
+    background-color: #fff;
+    color:  rgb(131, 0, 0);
+  }
