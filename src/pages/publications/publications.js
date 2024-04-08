@@ -5,14 +5,14 @@ import "./publications.css"; // Import the CSS file
 import defPic from '../../images/def.jpg'
 const defDesc = "Lorem think ipsum dolor sit amet, consectetur adipiscing elit. Sed think commodo mauris, sit amet fermentum lorem dapibus at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer think ultricies ipsum in turpis pretium, id think volutpat quam venenatis. Nulla facilisi. Duis think vehicula, think tortor sit amet finibus tristique, nisi tellus eleifend mauris, ac ullamcorper sapien leo sed ex.";
 const exhibitionsData = [
-  { id: 1, title: "Exhibition 1", date: "2024-01-15", status: "current" },
-  { id: 2, title: "Exhibition 2", date: "2024-03-10", status: "upcoming" },
-  { id: 3, title: "Exhibition 3", date: "2023-10-01", status: "past" },
-  { id: 4, title: "Exhibition 4", date: "2023-10-05", status: "current" },
-  { id: 5, title: "Exhibition 5", date: "2020-10-09", status: "past"},
-  { id: 6, title: "Exhibition 6", date: "2025-10-09", status: "upcoming"},
-  { id: 7, title: "Exhibition 7", date: "2020-10-09", status: "past"},
-  { id: 8, title: "Exhibition 8", date: "2020-10-09", status: "past"}
+  { id: 1, title: "Publication 1", date: "2024-01-15", status: "current" },
+  { id: 2, title: "Publication 2", date: "2024-03-10", status: "upcoming" },
+  { id: 3, title: "Publication 3", date: "2023-10-01", status: "past" },
+  { id: 4, title: "Publication 4", date: "2023-10-05", status: "current" },
+  { id: 5, title: "Publication 5", date: "2020-10-09", status: "past"},
+  { id: 6, title: "Publication 6", date: "2025-10-09", status: "upcoming"},
+  { id: 7, title: "Publication 7", date: "2020-10-09", status: "past"},
+  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"}
 
   // Add more exhibition data as needed
 ];
@@ -65,7 +65,7 @@ const Publications = () => {
       <div className="search-bar">
         <input
           type="text"
-          placeholder="Search exhibitions..."
+          placeholder="Search publications..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />

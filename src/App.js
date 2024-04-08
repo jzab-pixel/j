@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { useLocation } from "react-router-dom";
 import DonatePopUp from "./components/donate/donate";
+import ScrollToTopButton from "./components/scrollToTop/scroll";
 
 function RoutesWithTransition() {
   let location = useLocation();
@@ -48,6 +49,7 @@ function App() {
         <Navbar />
         <RoutesWithTransition />
         {showDonatePopUp && <DonatePopUp />}
+        <ScrollToTopButton />
       </BrowserRouter>
     </div>
   );
