@@ -27,6 +27,7 @@ function NavigationBar() {
       expand="lg"
       variant="dark"
       className={`Navigation ${visible ? "" : "hidden"}`}
+      // #C0C0C0
       style={{ backgroundColor: "#C0C0C0" }}
     >
       <Container className="navbar-container">

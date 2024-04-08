@@ -5,7 +5,8 @@
     flex-direction: column;
     align-items: left;
     justify-content: center;
-    border: solid 0.5px #ccc;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+
     
   }
   #welcomeBox
@@ -16,12 +17,14 @@
     width: 40%;
     padding: 3rem 5rem;
     transform: translate(50%, 80%);
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.5);
   }
 
   
   .visit-visitSectionTitle {
     font-size: 1.8rem;
     color: #000;
+    
 
   }
   
@@ -40,6 +43,8 @@
     align-items: center;
     margin-bottom: 1rem;
     padding: 30px;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+
 
   }
 
@@ -53,9 +58,11 @@
     line-height: 2;
     padding-left: 50px;
     padding-right: 50px;
+
   }
 
   body{
     height: 100vh;
+    background-color: rgb(180, 0, 0);
   }
 

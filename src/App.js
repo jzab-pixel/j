@@ -44,7 +44,7 @@ function App() {
   }, []);
 
   return (
-    <div style={{ backgroundColor: "#fff" }}>
+    <div style={{ backgroundColor: "rgb(180, 0, 0)" }}>
       <BrowserRouter>
         <Navbar />
         <RoutesWithTransition />
