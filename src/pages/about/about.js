@@ -2,6 +2,7 @@ import React from "react";
 import "./about.css";
 import { CloseButton } from "react-bootstrap";
 import defPic from '../../images/def.jpg'
+import Missions from "../../components/missions/missions";
 
 function About() {
   return (
@@ -47,7 +48,8 @@ function About() {
               Our Mission for The Tucson Center for Black Life is to re- create and sustain a cultural center and museum that is dedicated to advancing a comprehensive understanding of Black life in the Southwest; past, present, and future. 
             </div>
             <div>
-              <img src={defPic} id="aboutPic"/>
+              {/* <img src={defPic} id="aboutPic"/> */}
+              <Missions />
             </div>
           </div>
         </div>
@@ -118,6 +120,8 @@ function About() {
           platform’s development.
         </div>
       </div>
+      <br/>
+        <br/>
     </div>
   );
 }

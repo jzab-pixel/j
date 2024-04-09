@@ -6,7 +6,7 @@
     top: 0;
     bottom: 0;
     right: 0;
-    background-color: #ffffffa4;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,13 +16,14 @@
 {
     position: relative;
     width: 50%;
+    height: 80vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-items: center;
     background-color: rgb(223, 223, 223);
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    /* padding-top: 3rem;
+    padding-bottom: 3rem; */
     animation: fade-in 1s ease; /* Apply the fade-in animation */
 }
 

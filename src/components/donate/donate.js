@@ -11,7 +11,6 @@ function DonatePopUp() {
       
         setShowDonateWindow(true);
         document.body.style.overflow = "hidden"; // Disable scrolling
-     
     
         // Clean up function to clear the timer if component unmounts before the timeout
         return () => {

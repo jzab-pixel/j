@@ -28,6 +28,7 @@ function HoursSection() {
         Closed Dec. 25
         </div>
       </div>
+
     );
   }
 
@@ -60,6 +61,8 @@ function EntrySection() {
             <EntrySection />
           </div>
         </div>
+        <br/>
+        <br/>
       </div>
     );
   }

@@ -1,0 +1,28 @@
+#missionsBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+#mission1
+{
+    background-color: blue;
+}
+
+#mission2
+{
+    background-color: green;
+}
+
+#mission3
+{
+    background-color: yellow;
+}
+
+#mission1, #mission2, #mission3
+{
+    padding: 40px 15vw;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
