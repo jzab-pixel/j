@@ -6,29 +6,25 @@ import Visit from "./pages/visit/visit";
 import Publications from "./pages/publications/publications";
 import About from "./pages/about/about";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {Link} from 'react-scroll';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { useLocation } from "react-router-dom";
 import DonatePopUp from "./components/donate/donate";
 import ScrollToTopButton from "./components/scrollToTop/scroll";
-
-function RoutesWithTransition() {
-  let location = useLocation();
-  return (
-    <TransitionGroup>
-      <CSSTransition key={location.key} classNames="fade" timeout={300}>
-        <Routes location={location}>
-          <Route exact path="/" element={<Homepage />} />
-          <Route path="/Visit" element={<Visit />} />
-          <Route path="/Publications" element={<Publications />} />
-          <Route path="/About" element={<About />} />
-          {/* <Route path="/Authors" element={<Authors />} /> */}
-          {/* <Route path="/Bibliography" element={<Bibliography />} /> */}
-          {/* <Route path="/About" element={<About />} /> */}
-        </Routes>
-      </CSSTransition>
-    </TransitionGroup>
-  );
-}
+// function RoutesWithTransition() {
+//   let location = useLocation();
+  
+//   return (
+//           // homepage
+//           <Link to="home" smooth={true} duration></Link>
+//           <Link path="/Visit" element={<Visit />} />
+//           <Link path="/Publications" element={<Publications />} />
+//           <Link path="/About" element={<About />} />
+//           {/* <Route path="/Authors" element={<Authors />} /> */}
+//           {/* <Route path="/Bibliography" element={<Bibliography />} /> */}
+//           {/* <Route path="/About" element={<About />} /> */}
+//   );
+// }
 
 function App() {
   const [showDonatePopUp, setShowDonatePopUp] = useState(false);
@@ -45,12 +41,22 @@ function App() {
 
   return (
     <div style={{ backgroundColor: "rgb(100, 0, 0)" }}>
-      <BrowserRouter>
+     
         <Navbar />
-        <RoutesWithTransition />
         {showDonatePopUp && <DonatePopUp />}
         <ScrollToTopButton />
-      </BrowserRouter>
+        <div id="home">
+          <Homepage/>
+        </div>
+        <div id="visit">
+          <Visit/>
+        </div>
+        <div id="publications">
+          <Publications/>
+        </div>
+        <div id="about">
+         <About/>
+        </div>
     </div>
   );
 }

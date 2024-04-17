@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
+// import Container from "react-bootstrap/Container";
+// import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../images/TCBL_color_blocks.png";
 import "./navbar.css";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 
 function NavigationBar() {
   const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
@@ -22,38 +22,29 @@ function NavigationBar() {
   }, [prevScrollPos]);
 
   return (
-    <Navbar
-      collapseOnSelect
-      expand="lg"
-      variant="dark"
-      className={`Navigation ${visible ? "" : "hidden"}`}
-      // #C0C0C0
-      style={{ backgroundColor: "#C0C0C0" }}
-    >
-      <Container className="navbar-container">
-        <Navbar.Brand as={Link} to="/" className="logo">
+      <div className="navbar-container">
+        <div>
           <img src={logo} alt="logo" className="logo-image" />
-        </Navbar.Brand>
-        <Nav className="ml-auto">
+        </div>
+        <div className="ml-auto">
           <span className="separator">|</span>
-          <Nav.Link as={Link} to="/Visit" className="nav-link">
+          <Link to="visit" duration={1000} smooth={true} className="nav-link">
             <span className="hover-underline-animation">VISIT</span>
-          </Nav.Link>
+          </Link>
           <span className="separator">|</span>
-          <Nav.Link as={Link} to="/Publications" className="nav-link">
+          <Link to="publications" duration={1000} smooth={true} className="nav-link">
             <span className="hover-underline-animation">PUBLICATIONS</span>
-          </Nav.Link>
+          </Link>
           <span className="separator">|</span>
-          <Nav.Link as={Link} to="/About" className="nav-link">
+          <Link to="about" smooth={true} duration={1000} className="nav-link">
             <span className="hover-underline-animation">ABOUT</span>
-          </Nav.Link>
+          </Link>
           <span className="separator">|</span>
-          <Nav.Link as={Link} to="/Donate" id="donateBtn">
+          <Link to="donatePage" id="donateBtn">
             <span>DONATE</span>
-          </Nav.Link>
-        </Nav>
-      </Container>
-    </Navbar>
+          </Link>
+        </div>
+      </div>
   );
 }
 

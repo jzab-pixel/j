@@ -14,6 +14,16 @@ const exhibitionsData = [
   { id: 5, title: "Publication 5", date: "2020-10-09", status: "past"},
   { id: 6, title: "Publication 6", date: "2025-10-09", status: "upcoming"},
   { id: 7, title: "Publication 7", date: "2020-10-09", status: "past"},
+  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
+  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
+  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
+  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
+  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
+  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
+  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
+  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
+  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
+  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
   { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"}
 
   // Add more exhibition data as needed
@@ -63,7 +73,7 @@ const Publications = () => {
   }
 
   return (
-    <div className="galleryContainer">
+    <div id="publicationsPage">
       <div className="search-bar">
         <input
           type="text"
@@ -87,7 +97,9 @@ const Publications = () => {
         <button onClick={() => filterExhibitions("past")}>Past</button>
       </div>
 
+      <div className="galleryContainer">
       <ExhibitionGallery exhibitions={filteredExhibitions} />
+      </div>
     </div>
   );
 };

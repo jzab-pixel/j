@@ -42,8 +42,6 @@ function EntrySection() {
             Admission is free of charge at all locations except the Cooper Hewitt in New York City.
             Most museums are open every day of the year except December 25. The Cooper Hewitt in New York is open every day except Thanksgiving and December 25.
 
-            <br />
-            <br />
             <div style={{ fontWeight: "bold" }}>Passes/Tickets</div>
             The museum does not require passes or tickets for entry.
         </div>
@@ -53,16 +51,17 @@ function EntrySection() {
   
   function Visit() {
     return (
-      <div style={{ width: "80vw", height: "100vh", marginTop: "2rem", marginLeft: "auto", marginRight: "auto"}}>
-          <VisitPicSection />
-        <div style={{ display: "flex", flexDirection: "row", gap: "10px", margin: "0px" }}>
-          <HoursSection />
+      <div id="visitPage">
+        <div>
           <div>
+            <VisitPicSection />
+          </div>
+          <div style={{display:"flex", flexDirection:"row", width:"63%", gap:"40px"}}>
+            <HoursSection />
             <EntrySection />
           </div>
         </div>
-        <br/>
-        <br/>
+
       </div>
     );
   }
