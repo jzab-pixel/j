@@ -12,11 +12,20 @@
 
 #visitPage
 {
-  width: 100%;
-  height: 120vh;
+  width: 94%;
+  height: auto;
   background-color: rgb(100, 0, 0);
+  padding: 3%;
 }
   
+#visitPage div
+{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+}
+
   .visit-visitSectionTitle {
     font-size: 1.8rem;
     color: #000;

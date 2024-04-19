@@ -61,7 +61,6 @@ function EntrySection() {
             <EntrySection />
           </div>
         </div>
-
       </div>
     );
   }

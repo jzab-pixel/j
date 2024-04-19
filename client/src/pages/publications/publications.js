@@ -15,16 +15,16 @@ const exhibitionsData = [
   { id: 6, title: "Publication 6", date: "2025-10-09", status: "upcoming"},
   { id: 7, title: "Publication 7", date: "2020-10-09", status: "past"},
   { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
-  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
-  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
-  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
-  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
-  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
-  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
-  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
-  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
-  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"},
-  { id: 8, title: "Publication 8", date: "2020-10-09", status: "past"}
+  { id: 9, title: "Publication 9", date: "2020-10-09", status: "past"},
+  { id:10, title: "Publication 10", date: "2020-10-09", status: "past"},
+  { id:11, title: "Publication 11", date: "2020-10-09", status: "past"},
+  { id:12, title: "Publication 12", date: "2020-10-09", status: "past"},
+  { id:13, title: "Publication 13", date: "2020-10-09", status: "past"},
+  { id:14, title: "Publication 14", date: "2020-10-09", status: "past"},
+  { id:15, title: "Publication 15", date: "2020-10-09", status: "past"},
+  { id:16, title: "Publication 16", date: "2020-10-09", status: "past"},
+  { id:17, title: "Publication 17", date: "2020-10-09", status: "past"},
+  { id:18, title: "Publication 18", date: "2020-10-09", status: "past"}
 
   // Add more exhibition data as needed
 ];
@@ -97,7 +97,7 @@ const Publications = () => {
         <button onClick={() => filterExhibitions("past")}>Past</button>
       </div>
 
-      <div className="galleryContainer">
+      <div className="gallery">
       <ExhibitionGallery exhibitions={filteredExhibitions} />
       </div>
     </div>
