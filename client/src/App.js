@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import { TransitionGroup, CSSTransition, useLocation } from "react-transition-group";
 import Navbar from "./components/navbar/navbar";
 import Homepage from "./pages/homepage/homepage";
 import Visit from "./pages/visit/visit";
 import Publications from "./pages/publications/publications";
 import About from "./pages/about/about";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { useLocation } from "react-router-dom";
 import DonatePopUp from "./components/donate/donate";
 import ScrollToTopButton from "./components/scrollToTop/scroll";
+import "./App.css";
 
 function RoutesWithTransition() {
   let location = useLocation();
-  console.log(" I AM HERE RENDERING ");
   return (
     <TransitionGroup>
       <CSSTransition key={location.key} classNames="fade" timeout={300}>
@@ -22,9 +20,6 @@ function RoutesWithTransition() {
           <Route path="/Visit" element={<Visit />} />
           <Route path="/Publications" element={<Publications />} />
           <Route path="/About" element={<About />} />
-          {/* <Route path="/Authors" element={<Authors />} /> */}
-          {/* <Route path="/Bibliography" element={<Bibliography />} /> */}
-          {/* <Route path="/About" element={<About />} /> */}
         </Routes>
       </CSSTransition>
     </TransitionGroup>
@@ -33,16 +28,18 @@ function RoutesWithTransition() {
 
 function App() {
   const [showDonatePopUp, setShowDonatePopUp] = useState(false);
-  const [backEnd, setBackEnd] = useState([{}]);
+  const [backEndData, setBackEndData] = useState({});
+  const navigate = useNavigate();
+
   useEffect(() => {
-    fetch("/").then(
-      response => response.json()
-    ).then(
-      data => {
-        setBackEnd(data)
-      }
-    )
-  }, [])
+    fetch("http://localhost:8080/")
+      .then((response) => response.json())
+      .then((data) => setBackEndData(data))
+      .catch((error) => {
+        console.log("ERROR: ", error);
+      });
+  }, []);
+
   useEffect(() => {
     // Show donate pop-up after 5 seconds
     const timer = setTimeout(() => {
@@ -52,12 +49,15 @@ function App() {
     // Clean up function to clear the timer if component unmounts before the timeout
     return () => clearTimeout(timer);
   }, []);
-  
+
+  // Ensure path resets to "/" on every update
+  useEffect(() => {
+    navigate("/");
+  }, [navigate]);
+
   return (
     <div style={{ backgroundColor: "rgb(100, 0, 0)" }}>
-      <p>
-        {(backEnd.test)}
-      </p>
+      <p>{backEndData.test}</p>
       <BrowserRouter>
         <Navbar />
         <RoutesWithTransition />
