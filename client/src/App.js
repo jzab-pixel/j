@@ -13,6 +13,7 @@ import ScrollToTopButton from "./components/scrollToTop/scroll";
 
 function RoutesWithTransition() {
   let location = useLocation();
+  console.log(" I AM HERE RENDERING ");
   return (
     <TransitionGroup>
       <CSSTransition key={location.key} classNames="fade" timeout={300}>
@@ -32,7 +33,16 @@ function RoutesWithTransition() {
 
 function App() {
   const [showDonatePopUp, setShowDonatePopUp] = useState(false);
-
+  const [backEnd, setBackEnd] = useState([{}]);
+  useEffect(() => {
+    fetch("/").then(
+      response => response.json()
+    ).then(
+      data => {
+        setBackEnd(data)
+      }
+    )
+  }, [])
   useEffect(() => {
     // Show donate pop-up after 5 seconds
     const timer = setTimeout(() => {
@@ -42,9 +52,12 @@ function App() {
     // Clean up function to clear the timer if component unmounts before the timeout
     return () => clearTimeout(timer);
   }, []);
-
+  
   return (
     <div style={{ backgroundColor: "rgb(100, 0, 0)" }}>
+      <p>
+        {(backEnd.test)}
+      </p>
       <BrowserRouter>
         <Navbar />
         <RoutesWithTransition />
