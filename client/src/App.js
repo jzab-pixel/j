@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
-import { TransitionGroup, CSSTransition, useLocation } from "react-transition-group";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Navbar from "./components/navbar/navbar";
 import Homepage from "./pages/homepage/homepage";
 import Visit from "./pages/visit/visit";
@@ -9,6 +9,7 @@ import About from "./pages/about/about";
 import DonatePopUp from "./components/donate/donate";
 import ScrollToTopButton from "./components/scrollToTop/scroll";
 import "./App.css";
+import { useLocation } from "react-router-dom";
 
 function RoutesWithTransition() {
   let location = useLocation();
@@ -28,16 +29,16 @@ function RoutesWithTransition() {
 
 function App() {
   const [showDonatePopUp, setShowDonatePopUp] = useState(false);
-  const [backEndData, setBackEndData] = useState({});
-  const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8080/")
-      .then((response) => response.json())
-      .then((data) => setBackEndData(data))
-      .catch((error) => {
-        console.log("ERROR: ", error);
-      });
+    // Prevent default refresh behavior
+    const handleRefresh = (event) => {
+      event.preventDefault();
+    };
+
+    window.addEventListener("beforeunload", handleRefresh);
+
+    return () => window.removeEventListener("beforeunload", handleRefresh);
   }, []);
 
   useEffect(() => {
@@ -50,14 +51,10 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Ensure path resets to "/" on every update
-  useEffect(() => {
-    navigate("/");
-  }, [navigate]);
 
   return (
     <div style={{ backgroundColor: "rgb(100, 0, 0)" }}>
-      <p>{backEndData.test}</p>
+
       <BrowserRouter>
         <Navbar />
         <RoutesWithTransition />
