@@ -17,6 +17,7 @@ module.exports = {
     open: true,
     hot: true,
     liveReload: true,
+    historyApiFallback: true // added if 404 occurs, fallback to index.html
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],

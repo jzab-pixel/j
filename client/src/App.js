@@ -10,6 +10,7 @@ import DonatePopUp from "./components/donate/donate";
 import ScrollToTopButton from "./components/scrollToTop/scroll";
 import "./App.css";
 import { useLocation } from "react-router-dom";
+import Admin from "./components/admin/admin";
 
 function RoutesWithTransition() {
   let location = useLocation();
@@ -21,6 +22,7 @@ function RoutesWithTransition() {
           <Route path="/Visit" element={<Visit />} />
           <Route path="/Publications" element={<Publications />} />
           <Route path="/About" element={<About />} />
+          <Route path="/Admin" element={<Admin />} />
         </Routes>
       </CSSTransition>
     </TransitionGroup>
